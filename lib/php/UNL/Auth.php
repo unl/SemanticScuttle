@@ -2,7 +2,7 @@
 /**
  * This is a generic authentication framework for UNL which will return customized
  * containers for use at UNL.
- * 
+ *
  * <code>
  * <?php
  * require_once 'UNL/Auth.php';
@@ -15,8 +15,8 @@
  * </code>
  *
  * PHP version 5
- * 
- * @category  Authentication 
+ *
+ * @category  Authentication
  * @package   UNL_Auth
  * @author    Brett Bieber <brett.bieber@gmail.com>
  * @copyright 2009 Regents of the University of Nebraska
@@ -26,7 +26,7 @@
 class UNL_Auth
 {
     protected static $_instance = null;
-    
+
     public static function getInstance()
     {
         if (null === self::$_instance) {
@@ -35,20 +35,20 @@ class UNL_Auth
 
         return self::$_instance;
     }
-    
+
     private function __construct()
     {}
-    
+
     private function __clone()
     {}
-    
+
     /**
      * Abstract factory, used to get drivers for any of the authentication methods
      * on campus.
      *
      * @param string $auth_type CAS, LDAP, LotusNotes, etc
      * @param mixed  $options   Options for the specific container
-     * 
+     *
      * @return mixed
      */
     public static function factory($auth_type, $options = null)
@@ -57,13 +57,13 @@ class UNL_Auth
         $class_file = dirname(__FILE__).'/Auth/'.$auth_type.'.php';
         return self::discoverAndReturn($auth_class, $class_file, $options);
     }
-    
+
     /**
      * Returns an auth container for use with systems compatible with PEAR Auth
      *
      * @param string $auth_type CAS, LDAP, LotusNotes, etc
      * @param mixed  $options   Options for the container
-     * 
+     *
      * @return mixed
      */
     public static function PEARFactory($auth_type, $options = null, $loginFunction = null, $showLogin = true)
@@ -75,7 +75,7 @@ class UNL_Auth
         $container = self::discoverAndReturn($auth_class, $class_file, $options);
         return $container->getPEARAuth($options, $loginFunction, $showLogin);
     }
-    
+
     public static function ZendFactory($auth_type, $options = null)
     {
         throw new Exception('not implemented yet!');
@@ -85,14 +85,14 @@ class UNL_Auth
         $container = self::discoverAndReturn($auth_class, $class_file, $options);
         return $container;
     }
-    
+
     /**
      * This is a class used to discover and return a new class based given a class
      * name and file.
      *
      * @param string $class      name of the class to load UNL_Auth_CAS
      * @param string $class_file ./Auth/CAS.php
-     * 
+     *
      * @return object
      */
     protected static function discoverAndReturn($class, $class_file, $options = null)
@@ -110,7 +110,7 @@ class UNL_Auth
         } else {
             return new $class($options);
         }
-        
+
     }
 }
 
