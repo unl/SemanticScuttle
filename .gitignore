@@ -6,3 +6,7 @@ semanticscuttle-dump.sql
 data/config.php
 data/config.testing.php
 data/config.testing-tmp.php
+
+.buildpath
+.project
+.settings/
