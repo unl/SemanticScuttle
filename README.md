@@ -1,14 +1,18 @@
 ## Install
 
- * Follow http://semanticscuttle.sourceforge.net/docs/INSTALL.html
-   - Except: copy config.php.unl.dist to config.php
- * Add your username to $admin_users in config.php
- * Thumbnails: register at http://www.artviper.net/website-tools/website-thumbnails.php
-   - Set $enableWebsiteThumbnails to true and $thumbnailsUserId to your userID sent by email
+ - Follow http://semanticscuttle.sourceforge.net/docs/INSTALL.html
+   * Except: copy config.php.unl.dist to config.php
+ - Add your username to $admin_users in config.php
+ - Thumbnails: register at http://www.artviper.net/website-tools/website-thumbnails.php
+   * Set $enableWebsiteThumbnails to true and $thumbnailsUserId to your userID sent by email
 
 ## UNL Modifications
 
- * www/login.php - bypass login form for CAS
+ - www/login.php - bypass login form for CAS
+
+## UNL Templates/Theme
+
+ - admin.tpl.php, bookmarks.tpl.php, tags.tpl.php are only modified to add grid wrappers
 
 ## Semantic Scuttle Version
 
