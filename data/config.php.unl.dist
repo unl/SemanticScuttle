@@ -23,6 +23,16 @@ $sitename = 'Tag UNL';
 $welcomeMessage = 'Welcome to Tag UNL! Social bookmarking.';
 
 /**
+ * The HTML theme to use. With themes, you can give your semanticscuttle
+ * installation a new look.
+ *
+ * Themes are the folders in data/templates/
+ *
+ * @var string
+ */
+$theme = 'unl';
+
+/**
  * Translation from locales/ folder.
  *
  * Examples: de_DE, en_GB, fr_FR
