@@ -266,3 +266,10 @@ $authOptions = null;
  */
 $authDebug = false;
 
+/**
+ * Enable or disable user registration
+ *
+ * @var boolean
+ */
+$enableRegistration = false;
+
