@@ -250,10 +250,6 @@ li.xfolkentry div.vote-horiz-against {
 
 div#sidebar {
     font-size: small;
-    position: absolute;
-    right: 1em;
-    top: 10em;
-    width: 25%;
 }
 div#sidebar a {
     color: #995;
@@ -448,9 +444,6 @@ form#search {
        font-size: small;
        float: right;
        margin: 0;
-       position: absolute;
-       right: 0;
-       top: 6.4em;
 }
 form label,
 form td,
