@@ -1,7 +1,7 @@
 ## Install
 
- * Copy config.php.unl.dist to config.php
- * Set your databse info in config.php
+ * Follow http://semanticscuttle.sourceforge.net/docs/INSTALL.html
+   - Except: copy config.php.unl.dist to config.php
  * Add your username to $admin_users in config.php
 
 ## UNL Modifications
