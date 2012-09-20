@@ -2,26 +2,7 @@
 
 /* BASE */
 
-* {
-    font-family: "trebuchet ms", tahoma, sans-serif;
-}
-a {
-    color: #47A;
-    text-decoration: none;
-}
-a:hover {
-    color: #258;
-    text-decoration: underline;
-}
-a img {
-    border: 0;
-}
 
-
-body {
-    margin: 0;
-    padding: 0;
-}
 input[type=text],
 input[type=password],
 select,
@@ -80,43 +61,8 @@ th {
     text-align: right;
 }
 
-/* HEADER */
 
-div#header {
-    background: #FFF url('images/bg_header.png') bottom repeat-x;
-    border-bottom: 3px solid #9CD;
-    clear: both;
-}
-div#header:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-* html div#header {
-    height: 1%;
-}
-h1 {
-    float: left;
-    font-size: x-large;
-    font-weight: bold;
-    letter-spacing: 0.25em;
-    margin: 0;
-    padding: 1em;
-}
-html > body h1 {
-    background: url('images/logo.png') no-repeat 10px;
-    padding-left: 75px;
-}
-html > body div#header.popup h1 {
-    background: url('images/logo_24.gif') no-repeat 10px;
-    padding: 0.5em 0.5em 0.5em 50px;
-}
-/*html > body div#header #welcome {
-    position:absolute;
-    left:75px;
-}*/
+
 #welcome {
     border: 10px solid #995;
     width: 66%;
@@ -129,12 +75,7 @@ html > body div#header.popup h1 {
     text-align: center;
     font-size: xx-small;
 }
-h1 a {
-    color: #000;
-}
-h1 a:hover {
-    color: #000;
-}
+
 h2 {
     background: #666 url('images/bg_bar.png') center center repeat-x;
     border-bottom: 3px solid #DDD;
@@ -149,34 +90,7 @@ h2 a, h2 a:hover {
     color: #DDD;
 }
 
-/*sup {
-    color: #77ABE0;
-    font-weight: bold;
-}*/
 
-/* NAVIGATION */
-
-ul#navigation {
-    list-style-type: none;
-    margin: 0;
-    padding: 1.75em 1em;
-    width: auto;
-}
-ul#navigation a {
-    font-size: medium;
-    font-weight: bold;
-    padding: 0.2em 0.5em;
-}
-ul#navigation a:hover {
-    background: #7AD;
-    color: #FFF;
-}
-ul#navigation li {
-    float: left;
-}
-ul#navigation li.access {
-    float: right;
-}
 
 /* BOOKMARKS */
 
@@ -546,7 +460,7 @@ form th {
 form table {
     margin: 0 1em;
 }
-h3 {
+#maincontent h3 {
     background: #DDD;
     color: #555;
     font-size: small;
@@ -554,13 +468,9 @@ h3 {
     margin: 2em 1em 1em 1em;
     padding: 0.25em 0.75em;
 }
-li {
+#maincontent li {
     font-size: small;
     margin-bottom: 0.5em;
-}
-p {
-    font-size: small;
-    margin: 1em;
 }
 p#sort {
     /*color: #CCC;*/
@@ -626,7 +536,7 @@ div.collapsible p.tags {
 th label {
     padding-right: 1em;
 }
-ul {
+#maincontent ul {
     margin-right: 1em;
     width: 75%;
 }
