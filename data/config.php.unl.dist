@@ -139,6 +139,42 @@ $defaults['privacy'] = 0;
 
 
 /****************************
+ * Website Thumbnails
+ */
+
+/**
+ * Enable bookmark website thumbnails.
+ *
+ * According to artviper.net license, buy a license if you
+ * gain profit with your pages.
+ *
+ * @var  boolean
+ * @link http://www.websitethumbnail.de/
+ */
+$enableWebsiteThumbnails = false;
+
+/**
+ * User ID from websitethumbnail.de
+ *
+ * You need to register on
+ *  http://www.artviper.net/registerapi.php
+ * in order to use thumbnails on your domain
+ *
+ * @var  string
+ * @link http://www.artviper.net/website-tools/website-thumbnails.php
+ */
+$thumbnailsUserId = null;
+
+/**
+ * API key.
+ * Sent to you by artviper.net after registration.
+ *
+ * @var string
+ */
+$thumbnailsKey = null;
+
+
+/****************************
  * External user authentication
  */
 
