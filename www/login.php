@@ -21,12 +21,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 require_once 'www-header.php';
 
-
-/* Service creation: only useful services are created */
+/*
+// Service creation: only useful services are created
 // No specific services
 
 
-/* Managing all possible inputs */
+// Managing all possible inputs
 isset($_POST['keeppass']) ? define('POST_KEEPPASS', $_POST['keeppass']): define('POST_KEEPPASS', '');
 isset($_POST['submitted']) ? define('POST_SUBMITTED', $_POST['submitted']): define('POST_SUBMITTED', '');
 isset($_POST['username']) ? define('POST_USERNAME', $_POST['username']): define('POST_USERNAME', '');
@@ -38,7 +38,7 @@ $keeppass = (POST_KEEPPASS=='yes')?true:false;
 $login = false;
 if (POST_SUBMITTED!='' && POST_USERNAME!='' && POST_PASSWORD!='') {
     $posteduser = trim(utf8_strtolower(POST_USERNAME));
-    $login = $userservice->login($posteduser, POST_PASSWORD, $keeppass); 
+    $login = $userservice->login($posteduser, POST_PASSWORD, $keeppass);
     if ($login) {
         if (POST_QUERY)
             header('Location: '. createURL('bookmarks', $posteduser .'?'. POST_QUERY));
@@ -48,7 +48,7 @@ if (POST_SUBMITTED!='' && POST_USERNAME!='' && POST_PASSWORD!='') {
         $tplVars['error'] = T_('The details you have entered are incorrect. Please try again.');
     }
 }
-if (!$login) { 
+if (!$login) {
     if ($userservice->isLoggedOn()) {
         $cUser = $userservice->getCurrentObjectUser();
         header('Location: '. createURL('bookmarks', strtolower($cUser->getUsername())));
@@ -59,4 +59,22 @@ if (!$login) {
     $tplVars['querystring'] = filter($_SERVER['QUERY_STRING']);
     $templateservice->loadTemplate('login.tpl', $tplVars);
 }
-?>
+*/
+
+isset($_POST['query']) ? define('POST_QUERY', $_POST['query']): define('POST_QUERY', '');
+
+$login = false;
+
+$login = $userservice->login();
+
+if ($login) {
+    $cUser = $userservice->getCurrentObjectUser();
+    $username = strtolower($cUser->getUsername());
+
+    if (POST_QUERY)
+        header('Location: '. createURL('bookmarks', $username .'?'. POST_QUERY));
+    else
+        header('Location: '. createURL('bookmarks', $username));
+} else {
+    $tplVars['error'] = T_('Login Problem');
+}
