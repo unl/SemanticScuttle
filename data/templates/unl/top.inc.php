@@ -36,17 +36,15 @@ if (isset($rsschannels)) {
 
 
 <?php
-// Append and flush the buffer started above
+// Append and flush the buffer started above.
 $GLOBALS['unlTemplatedPage']->head = ob_get_clean();
 
-$GLOBALS['unlTemplatedPage']->navlinks = '<ul>
-                                          <li><a href="./">Home</a>
-                                              <ul>
-                                              <li><a href="./">Sub-link 1</a></li>
-                                              <li><a href="./">Sub-link 2</a></li>
-                                              </ul>
-                                          </li>
-                                          </ul>';
+
+if(!isset($_GET['popup'])) {
+    ob_start();
+    $this->includeTemplate('toolbar.inc');
+    $GLOBALS['unlTemplatedPage']->navlinks = ob_get_clean();
+}
 $GLOBALS['unlTemplatedPage']->breadcrumbs = '<ul>
                                              <li><a href="http://www.unl.edu/">UNL</a></li>
                                              <li><a href="' . ROOT . '">' . $GLOBALS['sitename'] . '</a></li>
@@ -57,20 +55,6 @@ $GLOBALS['unlTemplatedPage']->pagetitle = '<h1>' . $GLOBALS['welcomeMessage'] . 
 // Start a buffer to capture maincontent. Will be closed in bottom.inc.php
 ob_start();
 
-$headerstyle = '';
-if(isset($_GET['popup'])) {
-    $headerstyle = ' class="popup"';
-}
-?>
-
-<div id="header" <?php echo $headerstyle; ?>>
-<?php
-if(!isset($_GET['popup'])) {
-    $this->includeTemplate('toolbar.inc');
-}
-?></div>
-
-<?php
 if(DEBUG_MODE) {
     echo '<p class="error">'. T_('Admins, your installation is in "Debug Mode" ($debugMode = true). To go in "Normal Mode" and hide debugging messages, change $debugMode to false into config.php.') ."</p>\n";
 }
