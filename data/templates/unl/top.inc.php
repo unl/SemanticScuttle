@@ -11,6 +11,8 @@ $GLOBALS['unlTemplatedPage']->doctitle = '<title>'. filter((isset($pagetitle) ? 
 ob_start();
 ?>
 
+    <link rel="login" href="<?php echo ROOT ?>login" />
+    <link rel="logout" href="<?php echo ROOT ?>?action=logout" />
     <link rel="stylesheet" type="text/css" href="<?php echo $theme->resource('scuttle.css');?>" />
     <link rel="search" type="application/opensearchdescription+xml" href="<?php echo ROOT ?>api/opensearch.php" title="<?php echo htmlspecialchars($GLOBALS['sitename']) ?>"/>
 <?php
