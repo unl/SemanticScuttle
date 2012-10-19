@@ -23,6 +23,16 @@ $sitename = 'Tag UNL';
 $welcomeMessage = 'Welcome to Tag UNL! Social bookmarking.';
 
 /**
+ * The HTML theme to use. With themes, you can give your semanticscuttle
+ * installation a new look.
+ *
+ * Themes are the folders in data/templates/
+ *
+ * @var string
+ */
+$theme = 'unl';
+
+/**
  * Translation from locales/ folder.
  *
  * Examples: de_DE, en_GB, fr_FR
@@ -139,6 +149,90 @@ $defaults['privacy'] = 0;
 
 
 /****************************
+ * Website Thumbnails
+ */
+
+/**
+ * Enable bookmark website thumbnails.
+ *
+ * According to artviper.net license, buy a license if you
+ * gain profit with your pages.
+ *
+ * @var  boolean
+ * @link http://www.websitethumbnail.de/
+ */
+$enableWebsiteThumbnails = false;
+
+/**
+ * User ID from websitethumbnail.de
+ *
+ * You need to register on
+ *  http://www.artviper.net/registerapi.php
+ * in order to use thumbnails on your domain
+ *
+ * @var  string
+ * @link http://www.artviper.net/website-tools/website-thumbnails.php
+ */
+$thumbnailsUserId = null;
+
+/**
+ * API key.
+ * Sent to you by artviper.net after registration.
+ *
+ * @var string
+ */
+$thumbnailsKey = null;
+
+
+
+
+/****************************
+ * Tags
+ */
+
+/**
+ * Enable common tag descriptions
+ *
+ * @var boolean
+ */
+$enableCommonTagDescription = true;
+
+/**
+ * If everybody may edit common tag description.
+ * When set to false, only admins can do it.
+ *
+ * @var boolean
+ */
+$enableCommonTagDescriptionEditedByAll = false;
+
+/**
+ * Name of the tag whose subtags will appear in the menu box.
+ *
+ * @var string
+ * @see $maxSizeMenuBlock
+ */
+$menuTag = 'unl';
+
+/**
+ * Maximum number of items (tags) appearing in menu box.
+ *
+ * @var integer
+ * @see $menuTag
+ */
+$maxSizeMenuBlock = 7;
+
+/**
+ * List of tags used by menu2 sidebar box
+ * Empty list = hidden menu2 box
+ * menu2 displays linked tags just belonging to admins.
+ *
+ * @var array
+ */
+$menu2Tags = array('unl');
+
+
+
+/****************************
  * External user authentication
  */
 
@@ -171,4 +265,11 @@ $authOptions = null;
  * @var boolean
  */
 $authDebug = false;
+
+/**
+ * Enable or disable user registration
+ *
+ * @var boolean
+ */
+$enableRegistration = false;
 
