@@ -5,7 +5,7 @@
 $httpContentType = 'application/json';
 
 // Do NOT force auth.
-require_once '../www-header.php';
+require_once dirname(__DIR__) . '/www-header.php';
 
 //Get the url to query
 $url = "";
