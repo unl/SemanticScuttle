@@ -11,7 +11,7 @@ RewriteEngine On
 RewriteBase /workspace/scuttle/www/
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/.]+)/?(.*)$ ./$1.php/$2 [QSA,L]
-RewriteRule ^api/([a-z]+)/([a-z]+) /api/$1_$2.php]
+RewriteRule ^api/([a-z]+)/([a-z]+) /api/$1_$2.php
 </IfModule>
 
 
