@@ -29,8 +29,6 @@ if (empty($url)) {
 //Get all bookmarks from everyone for the given url.
 $bookmarks = $bookmarkService->getBookmarks(0, null, null, null, null, null, null, null, null, $url);
 
-$tags = array();
-
 //look though bookmarks to get tags...
 foreach ($bookmarks['bookmarks'] as $bookmark) {
     //Do not get tags for this bookmark if it is not public (public = 0, limited=1, private=2)
