@@ -7,11 +7,15 @@ $httpContentType = 'application/json';
 // Do NOT force auth.
 require_once dirname(__DIR__) . '/www-header.php';
 
-//Get the url to query
-$url = "";
-if (isset($_GET['url'])) {
-    $url = md5(urldecode($_GET['url']));
+//Fail early if no url was given.  (if empty url, scuttle may still return tags? weird.)
+if (!isset($_GET['url']) && !empty($_GET['url'])) {
+    //Send an empty json array (no tags).
+    echo json_encode(array());
+    exit();
 }
+
+//md5 the url (scuttle requires that the url be md5'd).
+$url = md5(urldecode($_GET['url']));
 
 /* Service creation: only useful services are created */
 $bookmarkService = SemanticScuttle_Service_Factory::get('Bookmark');
@@ -19,12 +23,6 @@ $b2tservice      = SemanticScuttle_Service_Factory::get('Bookmark2Tag');
 
 //Create an array of tags
 $tags = array();
-
-//Fail early if no url was given.  (if empty url, tags may still be returned?).
-if (empty($url)) {
-    echo json_encode($tags);
-    exit();
-}
 
 //Get all bookmarks from everyone for the given url.
 $bookmarks = $bookmarkService->getBookmarks(0, null, null, null, null, null, null, null, null, $url);
