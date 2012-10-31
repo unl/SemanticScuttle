@@ -74,7 +74,7 @@ if ($login) {
     if (POST_QUERY)
         header('Location: '. createURL('bookmarks', $username .'?'. POST_QUERY));
     else
-        header('Location: '. createURL('bookmarks', $username));
+        header('Location: '. createURL('bookmarks', $username . "?" . $_SERVER['QUERY_STRING']));
 } else {
     $tplVars['error'] = T_('Login Problem');
 }
